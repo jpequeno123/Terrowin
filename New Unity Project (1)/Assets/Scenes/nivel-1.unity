@@ -279,7 +279,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a013467baa0609f44bdb72505dbbc4df, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 342620606}
   animator: {fileID: 342620599}
-  runSpeed: 80
+  runSpeed: 30
 --- !u!114 &342620606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 891622370}
   - component: {fileID: 891622366}
   - component: {fileID: 891622365}
-
   m_Layer: 7
   m_Name: Tilemap
   m_TagString: block
@@ -32311,7 +32310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009828433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.95, z: -378.61203}
+  m_LocalPosition: {x: 0, y: -4.3, z: -378.61203}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 342620601}
