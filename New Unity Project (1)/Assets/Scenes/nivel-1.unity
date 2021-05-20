@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 891622370}
   - component: {fileID: 891622366}
   - component: {fileID: 891622365}
+
   m_Layer: 7
   m_Name: Tilemap
   m_TagString: block
