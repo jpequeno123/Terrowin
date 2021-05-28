@@ -224,21 +224,21 @@ public class Enemy : MonoBehaviour
 
         }
     }
-    public void JumpAttack()
-    {
-
-        //boss.LookAtPlayer();                                                           PARA VIR A IMGEM DIRANTE O SALTO
-
-        float distanceFromPLayer = player.position.x - rb.position.x;
-
-        rb.AddForce(new Vector2(distanceFromPLayer, jumpheight), ForceMode2D.Impulse);
-    }
-    public void bruhJumpAttack()
-    {
-        //boss.LookAtPlayer();                                                           PARA VIR A IMGEM DIRANTE O SALTO
-        float distanceFromPLayer = player.position.x - rb.position.x;
-        rb.AddForce(new Vector2(distanceFromPLayer, -20f), ForceMode2D.Impulse);
-    }
+//    public void JumpAttack()
+//    {
+//
+//        //boss.LookAtPlayer();                                                           PARA VIR A IMGEM DIRANTE O SALTO
+//
+//        float distanceFromPLayer = player.position.x - rb.position.x;
+//
+//        rb.AddForce(new Vector2(distanceFromPLayer, jumpheight), ForceMode2D.Impulse);
+//    }
+//    public void bruhJumpAttack()
+//    {
+//        //boss.LookAtPlayer();                                                           PARA VIR A IMGEM DIRANTE O SALTO
+//        float distanceFromPLayer = player.position.x - rb.position.x;
+//        rb.AddForce(new Vector2(distanceFromPLayer, -20f), ForceMode2D.Impulse);
+//    }
     public void TakeDamage(int damage)
     {
         flipped = animator.GetBool("Iflipped");
@@ -248,12 +248,12 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
-        else if ((natk % 2f == 0) && natk != 0)
-        {
-
-            animator.SetBool("IsJumpingAt", true);
-
-        }
+//        else if ((natk % 2f == 0) && natk != 0)
+//        {
+//
+//            animator.SetBool("IsJumpingAt", true);
+//
+//        }
         else
         {
             animator.SetTrigger("Hurt");
