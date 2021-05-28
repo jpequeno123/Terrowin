@@ -25,8 +25,8 @@ InputManager:
     m_Name: Attack
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: space
-    positiveButton: space
+    negativeButton: 
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
