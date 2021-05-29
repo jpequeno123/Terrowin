@@ -12,14 +12,14 @@ public class PlayerHealth : MonoBehaviour
 
     public int curhealth;
 
-    //public HealthBarp healthBarp;                                                         HEalth
+    public HealthBarp healthBarp;                                                         //HEalth
 
     public GameObject deathEffect;
 
     void Start()
     {
         curhealth = health;
-        //healthBarp.Sethealth(health);
+        healthBarp.Sethealth(health);
 
 
     }
@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
 
-        //healthBarp.SetHealth(curhealth);
+        healthBarp.SetHealth(curhealth);
     }
 
     void Die()

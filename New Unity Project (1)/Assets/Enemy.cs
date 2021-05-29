@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
 
 
-    //public HealthBar healthBar;                                                                            HEALTHBAR
+    public HealthBar healthBar;                                                                            //HEALTHBAR
     //public BossFlip boss;                                                                                     FLIP
     public Animator animator;
     private int Fc;
@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);                                                                            HEALTHBAR
+        healthBar.SetMaxHealth(maxHealth);                                                                           // HEALTHBAR
         IsAttacking = false;
         facingright = false;
         isFlipped = -1;
@@ -261,7 +261,7 @@ public class Enemy : MonoBehaviour
 
 
 
-        //healthBar.SetHealth(currentHealth);                                                                            HEALTHBAR
+        healthBar.SetHealth(currentHealth);                                                                           // HEALTHBAR
     }
     private void OnDrawGizmosSelected()
     {
