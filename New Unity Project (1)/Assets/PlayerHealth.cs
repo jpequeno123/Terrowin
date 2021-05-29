@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         healthBarp.SetHealth(curhealth);
     }
 
-    void Die()
+    public void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
