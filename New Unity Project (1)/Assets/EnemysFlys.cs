@@ -12,7 +12,7 @@ public class EnemysFlys : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] Transform playerCheck;
 
-    public float speed = 200f;
+    public float speed = 800f;
     public float nextWaypointDistance = 3f;
 
     public Transform enemyGFX;

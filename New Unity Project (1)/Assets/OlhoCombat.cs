@@ -10,6 +10,8 @@ public class OlhoCombat : MonoBehaviour
     public Vector3 attackOffset;
     public float attackRange = 1f;
     public LayerMask attackMask;
+    float nextAttackTime = 0f;
+    public float attackRate=1f;
 
     void FixedUpdate()
     {
@@ -20,7 +22,11 @@ public class OlhoCombat : MonoBehaviour
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
         if (colInfo != null)
         {
-            colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+            if (Time.time >= nextAttackTime)
+            {
+                colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+                nextAttackTime = Time.time + 0.75f / attackRate;
+            }
         }
 
     }
