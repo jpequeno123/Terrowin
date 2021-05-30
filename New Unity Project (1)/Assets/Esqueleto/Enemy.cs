@@ -135,9 +135,10 @@ public class Enemy : MonoBehaviour
                     Vector2 target = new Vector2(player.position.x, rb.position.y);
                     Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
                     rb.MovePosition(newPos);
-                    if (Vector2.Distance(player.position, rb.position) <= (attackRange * 2) && IsAttacking == false)
+                    if (Vector2.Distance(player.position, rb.position) <= (1.9f*1.5f) && IsAttacking == false)
                     {
                         animator.SetTrigger("Attack");
+                        Debug.Log("Attack");
 
                     }
 

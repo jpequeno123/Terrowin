@@ -8,7 +8,7 @@ public class BossWeapon : MonoBehaviour
     [SerializeField] public int attackDamage;
 
     public Vector3 attackOffset;
-    public float attackRange = 1f;
+    public float attackRange = 0.74f;
     public LayerMask attackMask;
 
     public void Attack()

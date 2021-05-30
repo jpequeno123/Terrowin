@@ -95,11 +95,11 @@ public class EnemysFlys : MonoBehaviour
                 currentWaypoint++;
             }
 
-            if (force.x >= 0.01f)
+            if (rb.velocity.x >= 0.01f)
             {
                 enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
             }
-            else if (force.x <= -0.01f)
+            else if (rb.velocity.x <= -0.01f)
             {
                 enemyGFX.localScale = new Vector3(1f, 1f, 1f);
             }
@@ -137,7 +137,8 @@ public class EnemysFlys : MonoBehaviour
 
         rb.gravityScale = 1;
 
-        GetComponent<Collider2D>().enabled = false;
+        gameObject.SetActive(false);
+
         this.enabled = false;
     }
 

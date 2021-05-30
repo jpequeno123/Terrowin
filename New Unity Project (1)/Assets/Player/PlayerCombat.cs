@@ -37,7 +37,7 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("Attack");
         // Detect eneies in range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, enemyLayers);
-        // Damage them
+            // Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
@@ -53,8 +53,8 @@ public class PlayerCombat : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
-            return;
+//        if (attackPoint == null)
+//            return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackrange);
     }
