@@ -111,7 +111,12 @@ public class EnemysFlys : MonoBehaviour
         natk += 0.5f;
         if (currentHealth <= 0)
         {
-            Die();
+            animator.SetTrigger("IsDead");
+                    Debug.Log("Enemy died!");
+            
+                    rb.gravityScale = 1;
+            
+                    this.enabled = false;
         }
         //        else if ((natk % 2f == 0) && natk != 0)
         //        {
@@ -129,18 +134,16 @@ public class EnemysFlys : MonoBehaviour
         //healthBar.SetHealth(currentHealth);                                                                           // HEALTHBAR
     }
 
-    public void Die()
-    {
-        Debug.Log("Enemy died!");
-
-        animator.SetBool("IsDead", true);
-
-        rb.gravityScale = 1;
-
-        gameObject.SetActive(false);
-
-        this.enabled = false;
-    }
+//    public void Die()
+//    {
+//        Debug.Log("Enemy died!");
+//
+//        rb.gravityScale = 1;
+//
+//        gameObject.SetActive(false);
+//
+//        this.enabled = false;
+//    }
 
 
 

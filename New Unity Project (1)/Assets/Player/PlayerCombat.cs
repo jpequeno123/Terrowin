@@ -12,6 +12,7 @@ public class PlayerCombat : MonoBehaviour
 
     public LayerMask enemyLayers;
     public LayerMask enemyLayersvoadores;
+    public LayerMask Basilisks;
     public int attackDamage = 40;
 
     public float attackRate = 2f;
@@ -48,6 +49,13 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D enemyfly in hitEnemiesfly)
         {
             enemyfly.GetComponent<EnemysFlys>().TakeDamage(attackDamage);
+        }
+
+        Collider2D[] hitBak = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, Basilisks);
+        // Damage them
+        foreach (Collider2D Bak in hitBak)
+        {
+            Bak.GetComponent<EnemyBak>().TakeDamage(attackDamage);
         }
     }
 
