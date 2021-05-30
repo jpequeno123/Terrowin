@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemysFlys : MonoBehaviour
 {
+    public Animator animator;
 
     public Transform target;
 
@@ -26,12 +27,18 @@ public class EnemysFlys : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    public int maxHealth = 40;
+    public int currentHealth;
+
+    private float natk;
+
     // Start is called before the first frame update
     void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         fc = 0;
+        currentHealth = maxHealth;
         InvokeRepeating("UpdatePath", 0f, .5f);
         InvokeRepeating("CheckPlayer", 0f, 0.01f);
         
@@ -98,6 +105,43 @@ public class EnemysFlys : MonoBehaviour
             }
         }
     }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        natk += 0.5f;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        //        else if ((natk % 2f == 0) && natk != 0)
+        //        {
+        //
+        //            animator.SetBool("IsJumpingAt", true);
+        //
+        //        }
+        else
+        {
+            animator.SetTrigger("Hurt");
+        }
+
+
+
+        //healthBar.SetHealth(currentHealth);                                                                           // HEALTHBAR
+    }
+
+    public void Die()
+    {
+        Debug.Log("Enemy died!");
+
+        animator.SetBool("IsDead", true);
+
+        rb.gravityScale = 1;
+
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+    }
+
+
 
     private void OnDrawGizmosSelected()
     {
