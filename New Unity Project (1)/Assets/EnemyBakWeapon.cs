@@ -7,16 +7,14 @@ public class EnemyBakWeapon : MonoBehaviour
     [SerializeField] public int attackDamage;
 
     public Animator animator;
-
-    public float attackRate = 1f;
-
     public Vector3 attackOffset;
     public float attackRange = 0.74f;
     public LayerMask attackMask;
     float nextAttackTime = 0f;
+    public float attackRate = 1f;
     private bool Hedied = false;
 
-    public void Attack()
+    void FixedUpdate()
     {
         Hedied = animator.GetBool("IsDead");
         Vector3 pos = transform.position;
