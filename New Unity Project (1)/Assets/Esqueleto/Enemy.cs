@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour
     private bool flipped;
     private bool IsAttacking;
     public int isFlipped;
+    private bool dead;
 
 
 
@@ -77,6 +78,7 @@ public class Enemy : MonoBehaviour
         IsAttacking = false;
         facingright = false;
         isFlipped = -1;
+        dead = false;
     }
 
 
@@ -240,9 +242,13 @@ public class Enemy : MonoBehaviour
         flipped = animator.GetBool("Iflipped");
         currentHealth -= damage;
         natk += 0.5f;
-        animator.SetTrigger("Hurt");
+        if (!dead)
+        {
+            animator.SetTrigger("Hurt");
+        }
         if (currentHealth <= 0)
         {
+            dead = true;
             animator.SetBool("IsDead", true);
             Die();
 
