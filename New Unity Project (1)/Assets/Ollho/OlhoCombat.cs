@@ -17,7 +17,7 @@ public class OlhoCombat : MonoBehaviour
 
     void FixedUpdate()
     {
-        Hedied = animator.GetBool("IsDead");
+        Hedied = animator.GetBool("Dead");
 
 
         Vector3 pos = transform.position;

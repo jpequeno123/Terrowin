@@ -111,12 +111,13 @@ public class EnemysFlys : MonoBehaviour
         natk += 0.5f;
         if (currentHealth <= 0)
         {
+            animator.SetBool("Dead", true);
             animator.SetTrigger("IsDead");
                     Debug.Log("Enemy died!");
             
-                    rb.gravityScale = 1;
+            rb.gravityScale = 1;
             
-                    this.enabled = false;
+            this.enabled = false;
         }
         //        else if ((natk % 2f == 0) && natk != 0)
         //        {

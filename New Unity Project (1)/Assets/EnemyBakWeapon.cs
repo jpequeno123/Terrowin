@@ -26,7 +26,7 @@ public class EnemyBakWeapon : MonoBehaviour
         {
             if (Time.time >= nextAttackTime)
             {
-                if (Hedied == false)
+                if (Hedied =! true)
                 {
                     colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
                     nextAttackTime = Time.time + 0.75f / attackRate;

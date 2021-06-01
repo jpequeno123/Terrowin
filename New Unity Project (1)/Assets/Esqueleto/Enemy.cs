@@ -240,20 +240,22 @@ public class Enemy : MonoBehaviour
         flipped = animator.GetBool("Iflipped");
         currentHealth -= damage;
         natk += 0.5f;
+        animator.SetTrigger("Hurt");
         if (currentHealth <= 0)
         {
+            animator.SetBool("IsDead", true);
             Die();
+
         }
+            
+
 //        else if ((natk % 2f == 0) && natk != 0)
 //        {
 //
 //            animator.SetBool("IsJumpingAt", true);
 //
 //        }
-        else
-        {
-            animator.SetTrigger("Hurt");
-        }
+
 
 
 
