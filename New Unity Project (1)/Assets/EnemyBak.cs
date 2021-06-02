@@ -96,10 +96,13 @@ public class EnemyBak : MonoBehaviour
 
 
         //rbtype.bodyType = RigidbodyType2D.Static;
-
-        GetComponent<BoxCollider2D>().enabled = false;
-
         GetComponent<CapsuleCollider2D>().enabled = false;
+
+        GetComponent<CircleCollider2D>().enabled = false;
+
+        GetComponent<CircleCollider2D>().enabled = false;
+        
+        GetComponent<BoxCollider2D>().enabled = false;
 
         this.enabled = false;
     }
