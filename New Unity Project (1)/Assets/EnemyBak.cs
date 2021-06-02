@@ -51,6 +51,8 @@ public class EnemyBak : MonoBehaviour
     private int Fc;
     private float MoveDirection;
     private int cont;
+    //Rigidbody rbbody;
+    //Rigidbody2D rbtype;
     Rigidbody2D rb;
     //private bool bump;
     private float natk;
@@ -88,7 +90,16 @@ public class EnemyBak : MonoBehaviour
 
         animator.SetBool("IsDead", true);
 
-        GetComponent<Collider2D>().enabled = false;
+        rb.gravityScale = 0;
+
+        rb.velocity = Vector2.zero;
+
+
+        //rbtype.bodyType = RigidbodyType2D.Static;
+
+        GetComponent<BoxCollider2D>().enabled = false;
+
+        GetComponent<CapsuleCollider2D>().enabled = false;
 
         this.enabled = false;
     }
@@ -114,7 +125,6 @@ public class EnemyBak : MonoBehaviour
             animator.SetBool("IsRunning", true);                                //certo
             if (isAPlayer == true || Fc == 1)
             {
-
                 Debug.Log("Atacarrrrrrrrrrrr");
                 Fc = 1;
                 {
