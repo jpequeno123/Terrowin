@@ -20,7 +20,7 @@ TagManager:
   - cliff
   - enemysfly
   - bak
-  - 
+  - boss
   - 
   - 
   - 
@@ -63,4 +63,7 @@ TagManager:
     locked: 0
   - name: ground
     uniqueID: 1823774825
+    locked: 0
+  - name: boss
+    uniqueID: 1867339163
     locked: 0
