@@ -28,6 +28,11 @@ public class EnemyBak : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float attackRange;
 
+    [SerializeField] private Collider2D m_Capsule;
+    [SerializeField] private Collider2D m_CircleOne;
+    [SerializeField] private Collider2D m_CircleTwo;
+    [SerializeField] private Collider2D m_Box;
+
 
 
 
@@ -94,12 +99,10 @@ public class EnemyBak : MonoBehaviour
 
         rb.velocity = Vector2.zero;
 
-
-        //rbtype.bodyType = RigidbodyType2D.Static;
-
-        GetComponent<BoxCollider2D>().enabled = false;
-
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        m_Capsule.enabled = false;
+        m_CircleOne.enabled = false;
+        m_CircleTwo.enabled = false;
+        m_Box.enabled = false;
 
         this.enabled = false;
     }
