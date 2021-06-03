@@ -15,7 +15,7 @@ public class Boss1_jumpAttack : MonoBehaviour
 	void Update()
 	{
 
-		Debug.Log(nat + "numero");
+		//Debug.Log(nat + "numero");
 
 		run = animator.GetBool("IsRunning");
 		if (run == true)
