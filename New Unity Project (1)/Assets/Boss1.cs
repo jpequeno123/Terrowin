@@ -118,7 +118,6 @@ public class Boss1 : MonoBehaviour
 
                 //Debug.Log("Atacarrrrrrrrrrrr");
                 Fc = 1;
-                {
 
 //                    if (acliff)
 //                    {
@@ -135,17 +134,11 @@ public class Boss1 : MonoBehaviour
                     Vector2 target = new Vector2(player.position.x, rb.position.y);
                     Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
                     rb.MovePosition(newPos);
-                    if (Vector2.Distance(player.position, rb.position) <= (3.44418f) && IsAttacking == false)
+                    if ((Vector2.Distance(player.position, rb.position) <= (3.44418f)) && IsAttacking == false)
                     {
                         animator.SetTrigger("Attack");
 
                     }
-
-
-
-
-
-                }
             }
 //            else if ((isAPlayer == fa lse || Fc == 0) && isGrounded == true)
 //            {
@@ -223,28 +216,30 @@ public class Boss1 : MonoBehaviour
         //boss.LookAtPlayer();                                                           PARA VIR A IMGEM DIRANTE O SALTO
 
         float distanceFromPLayer = player.position.x - rb.position.x;
-
+        //Debug.Log(distanceFromPLayer);
         rb.AddForce(new Vector2(distanceFromPLayer, jumpheight*1.4f), ForceMode2D.Impulse);
     }
     public void bruhJumpAttack()
     {
         //boss.LookAtPlayer();                                                           PARA VIR A IMGEM DIRANTE O SALTO
         float distanceFromPLayer = player.position.x - rb.position.x;
+        //Debug.Log(distanceFromPLayer);
         rb.AddForce(new Vector2(distanceFromPLayer, -5f), ForceMode2D.Impulse);
     }
     public void TakeDamage(int damage)
     {
         flipped = animator.GetBool("Iflipped");
         currentHealth -= damage;
-        natk += 0.25f;
-        Debug.Log(natk+"numero");
+        natk += 1f;
+        //Debug.Log(natk+"numero");
         if (currentHealth <= 0)
         {
             Die();
         }
-        else if ((natk % 2f == 0) && natk != 0)
+        else if ((natk % 8f == 0) && natk != 0)
         {
 
+            //natk = 0;
             animator.SetBool("IsJumpingAt", true);
 
         }

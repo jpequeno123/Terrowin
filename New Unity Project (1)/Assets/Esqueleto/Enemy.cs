@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Enemy died!");
+        //Debug.Log("Enemy died!");
 
         animator.SetBool("IsDead", true);
 
@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour
             if (isAPlayer == true || Fc == 1)
             {
 
-                Debug.Log("Atacarrrrrrrrrrrr");
+                //Debug.Log("Atacarrrrrrrrrrrr");
                 Fc = 1;
                 {
 
@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour
                     if (Vector2.Distance(player.position, rb.position) <= (1.9f*1.5f) && IsAttacking == false)
                     {
                         animator.SetTrigger("Attack");
-                        Debug.Log("Attack");
+                        //Debug.Log("Attack");
 
                     }
 
@@ -154,15 +154,15 @@ public class Enemy : MonoBehaviour
             {
                 animator.SetBool("IsJumping", false);
                 animator.SetBool("IsRunning", true);
-                Debug.Log("Modo Patrulha Pata");
+                //Debug.Log("Modo Patrulha Pata");
                 Petrol();                                           //check
                                                                     //Debug.Log("ESTRNHo");
             }
 
         }
 
-        Debug.Log(isFlipped);
-        Debug.Log(rb.velocity.x);
+        //Debug.Log(isFlipped);
+        //Debug.Log(rb.velocity.x);
     }
     void FLIP_Petrol()
     {

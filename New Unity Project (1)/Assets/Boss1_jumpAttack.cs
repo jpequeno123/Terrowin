@@ -9,12 +9,20 @@ public class Boss1_jumpAttack : MonoBehaviour
 	[SerializeField] Vector2 boxSize;
 	public Vector3 attackOffset;
 	public LayerMask attackMask;
-	private int nat;
+	private int nat=0;
 	public Animator animator;
 	private bool run;
-	void start()
+	void Update()
 	{
-		nat = 0;
+
+		Debug.Log(nat + "numero");
+
+		run = animator.GetBool("IsRunning");
+		if (run == true)
+		{
+			nat = 0;
+		}
+
 	}
 	public void jAttack()
 	{
@@ -23,29 +31,14 @@ public class Boss1_jumpAttack : MonoBehaviour
 		pos += transform.right * attackOffset.x;
 		pos += transform.up * attackOffset.y;
 
-		Collider2D[] colInfo = Physics2D.OverlapBoxAll(pos, boxSize, 0, attackMask);
-
-		foreach (Collider2D Simps in colInfo)
+		Collider2D colInfo = Physics2D.OverlapBox(pos, boxSize, 0, attackMask);
+		if (colInfo != null)
 		{
-			nat = nat + 1;
-		}
-		if (nat <= 1)
-		{
-			foreach (Collider2D Simps in colInfo)
+			if (nat==0)
 			{
-				Simps.GetComponent<PlayerHealth>().TakeDamage(attackDamage); ;
+				colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+				nat = 1;
 			}
-		}
-		else
-		{
-		}
-	}
-	void Update()
-	{
-		run = animator.GetBool("IsRunning");
-		if (run == true && nat >= 0)
-		{
-			nat = 0;
 		}
 	}
 	private void OnDrawGizmosSelected()
