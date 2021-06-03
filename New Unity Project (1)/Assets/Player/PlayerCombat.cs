@@ -15,6 +15,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask Basilisks;
     public LayerMask BossLayer;
     public int attackDamage = 40;
+    public int attackDamageBos = 20;
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
@@ -62,7 +63,7 @@ public class PlayerCombat : MonoBehaviour
         // Damage them
         foreach (Collider2D Boss in hitBoss)
         {
-            Boss.GetComponent<Boss1>().TakeDamage(attackDamage);
+            Boss.GetComponent<Boss1>().TakeDamage(attackDamageBos);
         }
     }
 

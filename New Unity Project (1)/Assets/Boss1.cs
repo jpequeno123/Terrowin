@@ -38,7 +38,7 @@ public class Boss1 : MonoBehaviour
     private bool wallinf;
     private bool nGroundinf;
     private bool stairinf;
-    private bool facingright;
+    //private bool facingright;
     private bool acliff;
 
 
@@ -50,8 +50,8 @@ public class Boss1 : MonoBehaviour
     //public BossFlip boss;
     public Animator animator;
     private int Fc;
-    private float MoveDirection;
-    private int cont;
+    //private float MoveDirection;
+    //private int cont;
     Rigidbody2D rb;
     //private bool bump;
     private float natk;
@@ -68,14 +68,14 @@ public class Boss1 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         natk = 0f;
         Fc = 0;
-        MoveDirection = -1f;
-        cont = 0;
+        //MoveDirection = -1f;
+        //cont = 0;
 
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         IsAttacking = false;
-        facingright = false;
+        //facingright = false;
         isFlipped = -1;
     }
 
@@ -85,7 +85,7 @@ public class Boss1 : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy died!");
+        //Debug.Log("Enemy died!");
 
         animator.SetBool("IsDead", true);
 
@@ -114,27 +114,28 @@ public class Boss1 : MonoBehaviour
             animator.SetBool("IsRunning", true);                                //certo
             if (isAPlayer == true || Fc == 1)
             {
+                animator.SetBool("Player", true);
 
-                Debug.Log("Atacarrrrrrrrrrrr");
+                //Debug.Log("Atacarrrrrrrrrrrr");
                 Fc = 1;
                 {
 
-                    if (acliff)
-                    {
-                        Fc = 0;
-                        if (cont % 2 == 0)
-                        {
-                            FLIP_Petrol();
-                            cont += 1;
-                        }
-
-
-                    }
+//                    if (acliff)
+//                    {
+//                        Fc = 0;
+//                        if (cont % 2 == 0)
+//                        {
+//                            FLIP_Petrol();
+//                            cont += 1;
+//                        }
+//
+//
+//                    }
                     LookAtPlayer();
                     Vector2 target = new Vector2(player.position.x, rb.position.y);
                     Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
                     rb.MovePosition(newPos);
-                    if (Vector2.Distance(player.position, rb.position) <= (attackRange * 2) && IsAttacking == false)
+                    if (Vector2.Distance(player.position, rb.position) <= (3.44418f) && IsAttacking == false)
                     {
                         animator.SetTrigger("Attack");
 
@@ -146,53 +147,53 @@ public class Boss1 : MonoBehaviour
 
                 }
             }
-            else if ((isAPlayer == false || Fc == 0) && isGrounded == true)
-            {
-                animator.SetBool("IsJumping", false);
-                animator.SetBool("IsRunning", true);
-                Debug.Log("Modo Patrulha Pata");
-                Petrol();                                           //check
-            }
+//            else if ((isAPlayer == fa lse || Fc == 0) && isGrounded == true)
+//            {
+//                animator.SetBool("IsJumping", false);
+//                animator.SetBool("IsRunning", true);
+//                Debug.Log("Modo Patrulha Pata");
+//                //Petrol();                                           //check
+//            }
 
         }
 
-        Debug.Log(isFlipped);
+        //Debug.Log(isFlipped);
     }
-    void FLIP_Petrol()
-    {
+//    void FLIP_Petrol()
+//    {
+//
+//        //        cont += 1;
+//        //        if(cont%2!=0)
+//        //        {
+//        //            isFlipped = 1;
+//        //        }
+//        //        if (cont % 2 == 0)
+//        //        {
+//        //            isFlipped = -1;
+//        //        }
+//        isFlipped *= -1;
+//        MoveDirection *= -1;
+//        facingright = !facingright;
+//        transform.Rotate(0, 180, 0);
+//    }
 
-        //        cont += 1;
-        //        if(cont%2!=0)
-        //        {
-        //            isFlipped = 1;
-        //        }
-        //        if (cont % 2 == 0)
-        //        {
-        //            isFlipped = -1;
-        //        }
-        isFlipped *= -1;
-        MoveDirection *= -1;
-        facingright = !facingright;
-        transform.Rotate(0, 180, 0);
-    }
-
-    void Petrol()
-    {
-        if ((!nGroundinf || wallinf) && isGrounded)
-        {
-            cont += 1;
-            if (facingright)
-            {
-                FLIP_Petrol();
-            }
-            else if (!facingright)
-            {
-                FLIP_Petrol();
-            }
-        }
-
-        rb.velocity = new Vector2(speed * MoveDirection, rb.velocity.y);
-    }
+//    void Petrol()
+//    {
+//        if ((!nGroundinf || wallinf) && isGrounded)
+//        {
+//            cont += 1;
+//            if (facingright)
+//            {
+//                FLIP_Petrol();
+//            }
+//            else if (!facingright)
+//            {
+//                FLIP_Petrol();
+//            }
+//        }
+//
+//        rb.velocity = new Vector2(speed * MoveDirection, rb.velocity.y);
+//    }
 
 
     public void LookAtPlayer()
@@ -223,19 +224,20 @@ public class Boss1 : MonoBehaviour
 
         float distanceFromPLayer = player.position.x - rb.position.x;
 
-        rb.AddForce(new Vector2(distanceFromPLayer, jumpheight), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(distanceFromPLayer, jumpheight*1.4f), ForceMode2D.Impulse);
     }
     public void bruhJumpAttack()
     {
         //boss.LookAtPlayer();                                                           PARA VIR A IMGEM DIRANTE O SALTO
         float distanceFromPLayer = player.position.x - rb.position.x;
-        rb.AddForce(new Vector2(distanceFromPLayer, -20f), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(distanceFromPLayer, -5f), ForceMode2D.Impulse);
     }
     public void TakeDamage(int damage)
     {
         flipped = animator.GetBool("Iflipped");
         currentHealth -= damage;
-        natk += 0.5f;
+        natk += 0.25f;
+        Debug.Log(natk+"numero");
         if (currentHealth <= 0)
         {
             Die();
