@@ -13,7 +13,7 @@ public class Attack1_move : StateMachineBehaviour
 
     Transform player;
     Rigidbody2D rb;
-    Enemy boss;
+    Boss1 boss1;
     public bool m_Grounded;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -21,14 +21,14 @@ public class Attack1_move : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
-        boss = animator.GetComponent<Enemy>();
+        boss1 = animator.GetComponent<Boss1>();
         animator.SetBool("bruh1", true);
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss.LookAtPlayer();
+        boss1.LookAtPlayer();
         Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
