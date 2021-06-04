@@ -40,11 +40,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: back clouds
+    uniqueID: 850935191
+    locked: 0
   - name: back trees
     uniqueID: 1655001343
     locked: 0
+  - name: mountains
+    uniqueID: 22468801
+    locked: 0
   - name: middle trees
     uniqueID: 2382606003
+    locked: 0
+  - name: front clouds
+    uniqueID: 2486972691
     locked: 0
   - name: Background
     uniqueID: 1114748703
