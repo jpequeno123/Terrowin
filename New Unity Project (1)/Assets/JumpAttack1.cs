@@ -9,7 +9,7 @@ public class JumpAttack1 : StateMachineBehaviour
     Boss1 boss1;
     Boss1_jumpAttack JumpDamage;
     private bool isjumping;
-    int FC;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -17,7 +17,6 @@ public class JumpAttack1 : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         boss1.JumpAttack();
         JumpDamage = animator.GetComponent<Boss1_jumpAttack>();
-        FC = 0;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

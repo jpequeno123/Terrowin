@@ -246,7 +246,7 @@ public class Boss1 : MonoBehaviour
         rb.velocity = new Vector2(0, 0);                                                       //PARA VIR A IMGEM DIRANTE O SALTO
         float distanceFromPLayer = player.position.x - rb.position.x;
         
-        rb.AddForce(new Vector2(distanceFromPLayer*10f, attackforce), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(distanceFromPLayer*7.5f, attackforce), ForceMode2D.Impulse);
     }
     public void TakeDamage(int damage)
     {

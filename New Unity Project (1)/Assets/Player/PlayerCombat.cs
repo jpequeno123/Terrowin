@@ -13,7 +13,8 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
     public LayerMask enemyLayersvoadores;
     public LayerMask Basilisks;
-    public LayerMask BossLayer;
+    public LayerMask Boss1Layer;
+    public LayerMask Boss3Layer;
     public int attackDamage = 40;
     public int attackDamageBos = 20;
 
@@ -39,12 +40,16 @@ public class PlayerCombat : MonoBehaviour
         // play attack animation
         animator.SetTrigger("Attack");
         // Detect eneies in range
+
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, enemyLayers);
             // Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
+
+
 
         Collider2D[] hitEnemiesfly = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, enemyLayersvoadores);
         // Damage them
@@ -53,17 +58,28 @@ public class PlayerCombat : MonoBehaviour
             enemyfly.GetComponent<EnemysFlys>().TakeDamage(attackDamage);
         }
 
+
+
         Collider2D[] hitBak = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, Basilisks);
         // Damage them
         foreach (Collider2D Bak in hitBak)
         {
             Bak.GetComponent<EnemyBak>().TakeDamage(attackDamage);
         }
-        Collider2D[] hitBoss = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, BossLayer);
+
+
+        Collider2D[] hitBoss1 = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, Boss1Layer);
         // Damage them
-        foreach (Collider2D Boss in hitBoss)
+        foreach (Collider2D Boss1 in hitBoss1)
         {
-            Boss.GetComponent<Boss1>().TakeDamage(attackDamageBos);
+            Boss1.GetComponent<Boss1>().TakeDamage(attackDamageBos);
+        }
+
+        Collider2D[] hitBoss3 = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, Boss3Layer);
+        // Damage them
+        foreach (Collider2D Boss3 in hitBoss3)
+        {
+            Boss3.GetComponent<Boss3>().TakeDamage(attackDamageBos);
         }
     }
 
