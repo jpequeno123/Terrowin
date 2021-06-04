@@ -13,7 +13,9 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
     public LayerMask enemyLayersvoadores;
     public LayerMask Basilisks;
+    public LayerMask BossLayer;
     public int attackDamage = 40;
+    public int attackDamageBos = 20;
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
@@ -56,6 +58,12 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D Bak in hitBak)
         {
             Bak.GetComponent<EnemyBak>().TakeDamage(attackDamage);
+        }
+        Collider2D[] hitBoss = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, BossLayer);
+        // Damage them
+        foreach (Collider2D Boss in hitBoss)
+        {
+            Boss.GetComponent<Boss1>().TakeDamage(attackDamageBos);
         }
     }
 
