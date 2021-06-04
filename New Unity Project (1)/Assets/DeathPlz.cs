@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
+
 
 public class DeathPlz : MonoBehaviour
 {
@@ -11,6 +13,10 @@ public class DeathPlz : MonoBehaviour
 
         Debug.Log("Enemy died!");
 
-        bruh.SetActive(false);  
+        bruh.SetActive(false);
+
+        //SceneManager.LoadScene(1);
+        
+
     }
 }
