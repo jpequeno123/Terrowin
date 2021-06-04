@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeathPlz : MonoBehaviour
 {
     public GameObject bruh;
-    public void Die()
+    public void dDie()
     {
         //olho = GameObject.Find("Enemy");
 

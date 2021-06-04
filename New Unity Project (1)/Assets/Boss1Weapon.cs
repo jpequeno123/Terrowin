@@ -7,6 +7,8 @@ public class Boss1Weapon : MonoBehaviour
 
 	[SerializeField] public int attackDamage;
 
+	public Animator animator;
+
 	public Vector3 attackOffset;
 	public float attackRange = 1f;
 	public LayerMask attackMask;
@@ -23,6 +25,14 @@ public class Boss1Weapon : MonoBehaviour
 			colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
 		}
 
+	}
+	public void wDie()
+	{
+		//Debug.Log("Enemy died!");
+
+		animator.SetBool("IsDead", true);
+
+			this.enabled = false;
 	}
 
 	void OnDrawGizmosSelected()

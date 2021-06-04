@@ -14,6 +14,11 @@ public class Boss1 : MonoBehaviour
     [SerializeField] Transform playerCheck;
     [SerializeField] Transform cliffCheck;
 
+
+    [SerializeField] private Collider2D m_Capsule1;
+    [SerializeField] private Collider2D m_Capsule2;
+    [SerializeField] private Collider2D m_Box0;
+
     [SerializeField] float Circleradius;
 
 
@@ -83,13 +88,18 @@ public class Boss1 : MonoBehaviour
 
 
 
-    void Die()
+    public void Die()
     {
         //Debug.Log("Enemy died!");
 
         animator.SetBool("IsDead", true);
 
-        GetComponent<Collider2D>().enabled = false;
+    
+        m_Capsule1.enabled = false;
+        m_Capsule2.enabled = false;
+        m_Box0.enabled = false;
+
+
         this.enabled = false;
     }
 
@@ -234,7 +244,7 @@ public class Boss1 : MonoBehaviour
         //Debug.Log(natk+"numero");
         if (currentHealth <= 0)
         {
-            Die();
+            animator.SetTrigger("IsDead");
         }
         else if ((natk % 8f == 0) && natk != 0)
         {

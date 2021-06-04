@@ -41,6 +41,17 @@ public class Boss1_jumpAttack : MonoBehaviour
 			}
 		}
 	}
+	public void jDie()
+	{
+		//Debug.Log("Enemy died!");
+
+		animator.SetBool("IsDead", true);
+
+		//GetComponent<Collider2D>().enabled = false;
+
+		this.enabled = false;
+	}
+
 	private void OnDrawGizmosSelected()
 	{
 		Vector3 pos = transform.position;
