@@ -32,6 +32,9 @@ public class Boss1 : MonoBehaviour
     [SerializeField] Vector2 boxSize;
     [SerializeField] Vector2 boxSize1;
     [SerializeField] float speed;
+    [SerializeField] float speedj;
+    [SerializeField] float attackforce;
+
     [SerializeField] float attackRange;
 
 
@@ -231,10 +234,19 @@ public class Boss1 : MonoBehaviour
     }
     public void bruhJumpAttack()
     {
-        //boss.LookAtPlayer();                                                           PARA VIR A IMGEM DIRANTE O SALTO
+        
+
+
+        //Vector2 targetj = new Vector2(player.position.x, player.position.y);
+        //Vector2 newPosj = Vector2.MoveTowards(rb.position, targetj, speedj * Time.fixedDeltaTime);
+        //rb.MovePosition(newPosj);
+
+
+        //boss.LookAtPlayer();
+        rb.velocity = new Vector2(0, 0);                                                       //PARA VIR A IMGEM DIRANTE O SALTO
         float distanceFromPLayer = player.position.x - rb.position.x;
-        //Debug.Log(distanceFromPLayer);
-        rb.AddForce(new Vector2(distanceFromPLayer, -5f), ForceMode2D.Impulse);
+        
+        rb.AddForce(new Vector2(distanceFromPLayer*10f, attackforce), ForceMode2D.Impulse);
     }
     public void TakeDamage(int damage)
     {
