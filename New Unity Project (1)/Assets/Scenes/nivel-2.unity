@@ -779,7 +779,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 6784
+    m_Bits: 64128
   m_GroundCheck: {fileID: 1465385686}
   m_CeilingCheck: {fileID: 1238242241}
   m_CrouchDisableCollider: {fileID: 0}
@@ -113362,7 +113362,7 @@ MonoBehaviour:
   nextWaypointDistance: 3
   enemyGFX: {fileID: 178738979}
   healthBar: {fileID: 1188871518}
-  maxHealth: 350
+  maxHealth: 280
   currentHealth: 0
 --- !u!114 &2109424421
 MonoBehaviour:
