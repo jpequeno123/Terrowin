@@ -99,15 +99,17 @@ public class Boss2 : MonoBehaviour
                 currentWaypoint++;
             }
 
-            if (rb.velocity.x >= 0.01f)
+            if (rb.velocity.x >= 0.6f)
             {
                 enemyGFX.localScale = new Vector3(-0.625f, 0.625f, 1f);
             }
-            else if (rb.velocity.x <= -0.01f)
+            else if (rb.velocity.x <= -0.6f)
             {
                 enemyGFX.localScale = new Vector3(0.625f, 0.625f, 1f);
             }
         }
+
+        Debug.Log(rb.velocity.x);
     }
     public void TakeDamage(int damage)
     {
