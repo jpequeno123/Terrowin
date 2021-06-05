@@ -23,6 +23,7 @@ public class EnemysFlys : MonoBehaviour
     bool reachedEndOfPath = false;
     private bool isAPlayer;
     private int fc;
+    public HealthBar healthBar;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -35,6 +36,7 @@ public class EnemysFlys : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthBar.SetMaxHealth(maxHealth);
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         fc = 0;
@@ -67,8 +69,10 @@ public class EnemysFlys : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (isAPlayer||fc==1)
         {
+            animator.SetBool("Player", true);
             fc = 1;
             if (path == null)
                 return;
@@ -129,6 +133,8 @@ public class EnemysFlys : MonoBehaviour
         {
             animator.SetTrigger("Hurt");
         }
+
+        healthBar.SetHealth(currentHealth);
 
 
 
