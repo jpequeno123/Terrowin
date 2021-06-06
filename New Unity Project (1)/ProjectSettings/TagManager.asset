@@ -23,7 +23,7 @@ TagManager:
   - boss1
   - boss3
   - boss2
-  - Banana and Cheese
+  - Banana and Cheese0
   - 
   - 
   - 
@@ -40,6 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: back cave
+    uniqueID: 3062765023
+    locked: 0
+  - name: middle cave
+    uniqueID: 1006278551
+    locked: 0
+  - name: back rocks
+    uniqueID: 4012365655
+    locked: 0
+  - name: front rocks
+    uniqueID: 475504519
+    locked: 0
   - name: back clouds
     uniqueID: 850935191
     locked: 0

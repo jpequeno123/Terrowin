@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public GameObject bananus;
+    public GameObject bananus0;
 
     public Animator animator;
 
@@ -18,13 +18,16 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject deathEffect;
 
-    [SerializeField] private LayerMask bananaLayer;
+    [SerializeField] private LayerMask bananaLayer0;
 
     [SerializeField] float Circleradius;
 
     [SerializeField] Transform bananaCheck;
 
-    private bool banana;
+    private bool banana0;
+
+
+
     int fc;
 
     void Start()
@@ -37,13 +40,12 @@ public class PlayerHealth : MonoBehaviour
     }
     void Update()
     {
-        banana = Physics2D.OverlapCircle(bananaCheck.position, Circleradius, bananaLayer);
-        if(banana && fc==0)
+        banana0 = Physics2D.OverlapCircle(bananaCheck.position, Circleradius, bananaLayer0);
+        if(banana0 && fc==0)
         {
             fc = 1;
             curhealth=200;
-            bananus.SetActive(false);
-
+            bananus0.SetActive(false);
             healthBarp.SetHealth(curhealth);
         }
     }
