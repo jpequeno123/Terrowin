@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class DeathPlz : MonoBehaviour
 {
+    public GameObject heath;
     public GameObject bruh;
+    public void Hello()
+    {
+        heath.SetActive(true);
+    }
     public void dDie()
     {
         //olho = GameObject.Find("Enemy");
