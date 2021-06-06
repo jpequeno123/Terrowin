@@ -105,7 +105,6 @@ public class Enemy : MonoBehaviour
         wallinf = Physics2D.OverlapCircle(wallCheck.position, Circleradius, groundLayer);
         acliff = Physics2D.OverlapCircle(cliffCheck.position, Circleradius, cliffLayer);
 
-
         if (isGrounded == false)                                                                    //certo
         {
             animator.SetBool("IsJumping", true);
