@@ -7,12 +7,7 @@ using UnityEngine.SceneManagement;
 public class EndScene : MonoBehaviour
 {
     public GameObject bruh;
-    public GameObject heath;
-    public void Hello()
-    {
-        heath.SetActive(true);
-    }
-        public void dDie()
+    public void dDie()
     {
         //olho = GameObject.Find("Enemy");
 
