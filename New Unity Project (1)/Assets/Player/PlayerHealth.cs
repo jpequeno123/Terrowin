@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public GameObject bananus0;
-
     public Animator animator;
 
     public int health = 200;
@@ -18,13 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject deathEffect;
 
-    [SerializeField] private LayerMask bananaLayer0;
-
     [SerializeField] float Circleradius;
-
-    [SerializeField] Transform bananaCheck;
-
-    private bool banana0;
 
 
 
@@ -38,31 +30,27 @@ public class PlayerHealth : MonoBehaviour
 
 
     }
-    void Update()
-    {
-        banana0 = Physics2D.OverlapCircle(bananaCheck.position, Circleradius, bananaLayer0);
-        if(banana0 && fc==0)
-        {
-            fc = 1;
-            curhealth=200;
-            bananus0.SetActive(false);
-            healthBarp.SetHealth(curhealth);
-        }
-    }
 
 
     public void TakeDamage(int damage)
     {
         curhealth -= damage;
-
-        animator.SetTrigger("Hurt");
-        // Se quiseres por o inimigo a piscar em vez de levar dano
-
-        //StartCoroutine(DamageAnimation());
-
-        if (curhealth <= 0)
+        if (damage < 0)
         {
-            Die();
+            curhealth = 200;
+        }
+        if (damage > 0)
+        {
+
+            animator.SetTrigger("Hurt");
+            // Se quiseres por o inimigo a piscar em vez de levar dano
+
+            //StartCoroutine(DamageAnimation());
+
+            if (curhealth <= 0)
+            {
+                Die();
+            }
         }
 
         healthBarp.SetHealth(curhealth);
@@ -72,14 +60,6 @@ public class PlayerHealth : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(bananaCheck.position, Circleradius);
-    }
-
 
 
 
