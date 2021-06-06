@@ -48,6 +48,7 @@ public class Boss3 : MonoBehaviour
     private bool stairinf;
     //private bool facingright;
     private bool acliff;
+    public GameObject heath;
 
 
     public int maxHealth = 200;
@@ -125,7 +126,8 @@ public class Boss3 : MonoBehaviour
             animator.SetBool("IsRunning", true);                                //certo
             if (isAPlayer == true || Fc == 1)
             {
-                animator.SetBool("Player", true);
+            heath.SetActive(true);
+            animator.SetBool("Player", true);
 
                 //Debug.Log("Atacarrrrrrrrrrrr");
                 Fc = 1;
