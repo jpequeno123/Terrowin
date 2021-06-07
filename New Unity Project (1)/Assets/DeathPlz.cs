@@ -20,7 +20,7 @@ public class DeathPlz : MonoBehaviour
 
         bruh.SetActive(false);
 
-        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
         
 
     }
