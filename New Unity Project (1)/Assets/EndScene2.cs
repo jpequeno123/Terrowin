@@ -19,7 +19,7 @@ public class EndScene2 : MonoBehaviour
 
         bruh.SetActive(false);
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
 
 
     }
