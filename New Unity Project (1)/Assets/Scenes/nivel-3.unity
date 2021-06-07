@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 151600784}
   m_HandleRect: {fileID: 731494319}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -60
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -114166,7 +114166,7 @@ MonoBehaviour:
   attackforce: -45
   attackRange: 1.22
   heath: {fileID: 1905492518}
-  maxHealth: 350
+  maxHealth: 400
   currentHealth: 0
   healthBar: {fileID: 1905492520}
   animator: {fileID: 1169848204}
