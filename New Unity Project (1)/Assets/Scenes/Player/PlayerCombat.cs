@@ -22,15 +22,6 @@ public class PlayerCombat : MonoBehaviour
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
-    private string currentState;
-
-    const string PLAYER_Attack = "Player_Attack";
-
-    void start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -38,7 +29,6 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -49,15 +39,12 @@ public class PlayerCombat : MonoBehaviour
     void Attack()
     {
         // play attack animation
-        if (Time.time )
-        {
-            animator.Play(PLAYER_Attack);
-        }
+        animator.SetTrigger("Attack");
         // Detect eneies in range
 
 
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, enemyLayers);
-        // Damage them
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, enemyLayers);
+            // Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
