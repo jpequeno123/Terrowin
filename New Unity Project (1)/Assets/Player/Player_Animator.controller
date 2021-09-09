@@ -35,9 +35,7 @@ AnimatorState:
   m_Name: Idlke_player
   m_Speed: 0.2
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -4006619336412612893}
-  - {fileID: 7749317434999912649}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -91,11 +89,7 @@ AnimatorState:
   m_Name: Player_hurt
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 3494336510695660600}
-  - {fileID: 3535018523265364184}
-  - {fileID: 2356887665815534626}
-  - {fileID: 8929134416698539144}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -149,9 +143,7 @@ AnimatorState:
   m_Name: Terrowin_Run
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 2627751885575866044}
-  - {fileID: 846492333980317431}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -514,29 +506,27 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -4226221891581987665}
-    m_Position: {x: 50, y: 290, z: 0}
+    m_Position: {x: 330, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1122551474149502161}
-    m_Position: {x: 290, y: 440, z: 0}
+    m_Position: {x: 330, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5770512135094497942}
-    m_Position: {x: 290, y: 70, z: 0}
+    m_Position: {x: 330, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9171867682823456523}
-    m_Position: {x: 670, y: 70, z: 0}
+    m_Position: {x: 330, y: 420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3257023721197615962}
-    m_Position: {x: 670, y: 280, z: 0}
+    m_Position: {x: 330, y: 360, z: 0}
   m_ChildStateMachines: []
-  m_AnyStateTransitions:
-  - {fileID: 2264319553124280742}
-  - {fileID: 3791564166312879714}
+  m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 1090, y: 270, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 1060, y: 170, z: 0}
+  m_AnyStatePosition: {x: 350, y: 70, z: 0}
+  m_EntryPosition: {x: 350, y: 120, z: 0}
+  m_ExitPosition: {x: 340, y: 480, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -4226221891581987665}
 --- !u!1102 &5770512135094497942
@@ -549,9 +539,7 @@ AnimatorState:
   m_Name: Player_Jump
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 1405375992105176357}
-  - {fileID: -2607679901767481488}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -653,10 +641,7 @@ AnimatorState:
   m_Name: Player_Attack
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -647680560399177334}
-  - {fileID: -4613426968563843860}
-  - {fileID: 2114947751493192921}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
